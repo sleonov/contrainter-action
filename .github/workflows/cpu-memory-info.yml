@@ -24,3 +24,5 @@ jobs:
           resource-type: ${{ matrix.resource }}
       - name: Get the outputs from docker action step
         run: echo "${{ matrix.resource }}=${{ steps.local-docker-action.outputs.value }}"
+      - name: List files in working directory
+        run: ls -al .
