@@ -22,6 +22,5 @@ jobs:
         uses: ./
         with:
           resource-type: ${{ matrix.resource }}
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Get the outputs from docker action step
+        run: echo "${{ matrix.resource }} = ${{ steps.local-docker-action.outputs.value }}"
