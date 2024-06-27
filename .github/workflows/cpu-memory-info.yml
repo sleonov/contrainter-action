@@ -23,4 +23,4 @@ jobs:
         with:
           resource-type: ${{ matrix.resource }}
       - name: Get the outputs from docker action step
-        run: echo "${{ matrix.resource }} = ${{ steps.local-docker-action.outputs.value }}"
+        run: echo "${{ matrix.resource }}=${{ steps.local-docker-action.outputs.value }}"
