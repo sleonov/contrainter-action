@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh -l
 
 echo "Parameter passed: $1"
 value="UNKNOWN"
