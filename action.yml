@@ -1,1 +1,14 @@
-
+name: Get memory/cpu information in docker container
+inputs:
+  resource-type:  # memory/cpu
+    description: Resource to query
+    required: true
+    default: memory
+outputs:
+  value:
+    description: Amount of memory or cpu
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.resource-type }}
