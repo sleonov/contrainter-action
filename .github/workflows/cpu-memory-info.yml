@@ -7,7 +7,7 @@ jobs:
     steps:
     - run: echo "Hi there, partners"
 
-  execute_container_action:
+  execute-container-action:
     needs: say-hi
     runs-on: ubuntu-latest
     strategy:
