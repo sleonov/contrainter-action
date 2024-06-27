@@ -21,7 +21,7 @@ jobs:
         id: local-docker-action
         uses: ./
         with:
-          resource: ${{ matrix.resource }}
+          resource-type: ${{ matrix.resource }}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
