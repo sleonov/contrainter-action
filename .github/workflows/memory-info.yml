@@ -1,1 +1,26 @@
+name: Container action flow
+on: [push]
 
+jobs:
+  say-hi:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Hi there, partners"
+
+  execute_container_action:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        resource: [cpu, memory]
+    name: Execute container action
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Docker action
+        id: local-docker-action
+        uses: ./
+        with:
+          resource: ${{ matrix.resource }}
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
